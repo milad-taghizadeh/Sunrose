@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <title>Single-Page Website</title>
+  <style>
+    .dark-mode {
+      background-color: #1f2937;
+      color: #fff;
+    }
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #3182ce;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-800">
+  <div id="progressBar"></div>
+
+  <header class="flex items-center justify-center px-4 py-3 bg-gray-200 dark:bg-gray-800">
+    <div class="flex items-center">
+      <button id="darkModeBtn" class="text-gray-700 dark:text-gray-300 mr-4 focus:outline-none">Dark Mode</button>
+      <h1 class="text-2xl font-bold text-gray-700 dark:text-gray-300">Text Logo</h1>
+    </div>
+    <ul class="flex space-x-4">
+      <li id="button1" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-500 hover:underline cursor-pointer">Button 1</li>
+      <li id="button2" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-green-500 hover:underline cursor-pointer">Button 2</li>
+      <li id="button3" class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-red-500 hover:underline cursor-pointer">Button 3</li>
+    </ul>
+  </header>
+
+  <div id="page1" class="hidden">
+    <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
+    <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <div id="page2" class="hidden">
+    <h2 class="text-3xl font-bold text-center mt-8">Page 2 Content</h2>
+    <p class="text-center mt-4">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div id="page3" class="hidden">
+    <h2 class="text-3xl font-bold text-center mt-8">Page 3 Content</h2>
+    <p class="text-center mt-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <script>
+    const darkModeBtn = document.getElementById('darkModeBtn');
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    const button3 = document.getElementById('button3');
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const page3 = document.getElementById('page3');
+    const progressBar = document.getElementById('progressBar');
+    const body = document.body;
+
+    darkModeBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+    });
+
+    const showPage = (page) => {
+      page1.classList.add('hidden');
+      page2.classList.add('hidden');
+      page3.classList.add('hidden');
+      page.classList.remove('hidden');
+    };
+    const simulateLoading = (page) => {
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += 10;
+          progressBar.style.width = `${progress}%`;
+          if (progress >= 100) {
+            clearInterval(interval);
+            progressBar.style.width = '0';
+            showPage(page);
+          }
+        }, 200);
+      };
+  
+      button1.addEventListener('click', () => {
+        simulateLoading(page1);
+      });
+  
+      button2.addEventListener('click', () => {
+        simulateLoading(page2);
+      });
+  
+      button3.addEventListener('click', () => {
+        simulateLoading(page3);
+      });
+    </script>
+  </body>
+  </html>
