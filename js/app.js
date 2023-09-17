@@ -57,7 +57,7 @@ const handleScroll = () => {
     // Check if scrolling up or down
     if (prevScrollPos > currentScrollPos) {
         // Scrolling up, increase header height
-        headerHeight += 1; // Change this value to adjust the speed of the height change
+        headerHeight += 5; // Change this value to adjust the speed of the height change
     } else {
         // Scrolling down, decrease header height
         headerHeight -= 1; // Change this value to adjust the speed of the height change
