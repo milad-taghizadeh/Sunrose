@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
     <title>سان رز تجارت سانیا</title>
 
 </head>
@@ -14,7 +16,8 @@
 <body class="bg-white dark:bg-gray-800">
     <div id="progressBar" class="z-50"></div>
 
-    <header class="header flex backdrop-filter backdrop-blur-2xl px-16 items-center justify-center sticky top-0 w-full h-20 dark:bg-gray-800">
+    <header
+        class="header flex backdrop-filter backdrop-blur-2xl px-16 items-center justify-center sticky top-0 w-full h-20 dark:bg-gray-800">
         <div class="flex w-full  justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-700 dark:text-gray-300">SunRose TS</h1>
             <ul class="flex gap-x-5">
@@ -29,24 +32,25 @@
                     درباره ما</li>
             </ul>
             <button id="darkModeBtn" class="text-gray-700 dark:text-gray-300 mr-4 focus:outline-none">Dark Mode</button>
-    </div>
+        </div>
     </header>
 
     <div id="page1" class="flex flex-col justify-center items-center">
-        <img src="./images/ultrawide-cloudy-forest-wallpaper.jpg" alt="" srcset="" class="flex w-96 h-96">
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h2 class="text-3xl font-bold text-center mt-8">Page 1 Content</h2>
-        <p class="text-center mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 
     <div id="page2" class="hidden">
@@ -59,9 +63,10 @@
         <p class="text-center mt-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
             ex ea commodo consequat.</p>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/swiper.js"></script>
+
+
 </body>
 
 </html>
