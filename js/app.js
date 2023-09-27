@@ -76,3 +76,13 @@ const handleScroll = () => {
 
 // Attach scroll event listener
 window.addEventListener('scroll', handleScroll);
+
+
+// DarkMode Icon 
+const darkbtn = document.getElementById("darkbtn");
+const lightbtn = document.getElementById("lightbtn");
+const clrswitch = document.getElementById("darkModeBtn");
+clrswitch.addEventListener('click' , () => {
+    darkbtn.classList.toggle("hidden");
+    lightbtn.classList.toggle('hidden');
+})
