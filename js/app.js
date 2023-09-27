@@ -10,6 +10,7 @@ const body = document.body;
 
 darkModeBtn.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
+    li.classList.toggle('dark-mode');
 });
 
 const showPage = (page) => {
