@@ -7,9 +7,11 @@ const page2 = document.getElementById('page2');
 const page3 = document.getElementById('page3');
 const progressBar = document.getElementById('progressBar');
 const body = document.body;
+const headers = document.getElementsByTagName('header');
 
 darkModeBtn.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
+    headers.classList.toggle('dark-mode');
 });
 
 const showPage = (page) => {
