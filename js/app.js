@@ -35,6 +35,7 @@ const simulateLoading = (page) => {
 
 home.addEventListener('click', () => {
     simulateLoading(page1);
+    document.getElementById('home').classList.add('text-blue-500');
 });
 
 button2.addEventListener('click', () => {
